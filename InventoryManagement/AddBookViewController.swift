@@ -39,6 +39,7 @@ class AddBookViewController: NSViewController {
     }
     
     @IBAction func cancelButton(_ sender: Any) {
+        
         self.dismiss(self)
     }
     
@@ -53,6 +54,7 @@ class AddBookViewController: NSViewController {
                 
 //       button.addTarget(self, action: #selector(AddBookViewController.addBook), for: NSControl.Event.touchUpInside)
         
+        
      
         ISBN = ISBNTextField.stringValue
         print("\(ISBN)")
@@ -64,6 +66,16 @@ class AddBookViewController: NSViewController {
         print("\(Quantity)")
         Price = priceTextField.stringValue
         print("\(Price)")
+        
+        vc.bookList.append(Book(isbn: ISBN, title: Title, author: Author, qty: Quantity, price: Price))
+        print(vc.bookList[0])
+        vc.saveToFile()
+        vc.restoreFromFile()
+        //vc.tableView.reloadData()
+
+
+        self.vc.viewDidLoad()
+        self.dismiss(self)
 
        // ISBNTextField.frame = CGRect(x: 10, y: 50, width: 30, height: 20)
 //         ISBNTextField.textColor = NSColor.white
@@ -120,14 +132,15 @@ class AddBookViewController: NSViewController {
     @IBOutlet weak var priceTextField: NSTextField!
 //
     @objc func addBook () {
-    let vc : ViewController =   presentingViewController as! ViewController
-    vc.bookList.append(Book(isbn: ISBN, title: Title, author: Author, qty: Quantity, price: Price))
-    vc.saveToFile()
-    vc.restoreFromFile()
-    vc.bookTableView.reloadData()
-
-
-      self.vc.viewDidLoad()
+    //let vc : ViewController =   presentingViewController as! ViewController
+//    vc.books.append(Book(isbn: ISBN, title: Title, author: Author, qty: Quantity, price: Price))
+//    vc.saveToFile()
+//    vc.restoreFromFile()
+//    vc.tableView.reloadData()
+//
+//
+//      self.vc.viewDidLoad()
+//        self.dismiss(self)
    }
 
 @objc func clearRecords(){

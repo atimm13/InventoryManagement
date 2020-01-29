@@ -969,9 +969,9 @@
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4L8-jJ-oWy">
                                 <rect key="frame" x="84" y="548" width="77" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="ISBN" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="pik-o5-7i6" id="2f4-bv-9KA">
+                                <popUpButtonCell key="cell" type="push" title="Author" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="pik-o5-7i6" id="2f4-bv-9KA">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="HYG-dO-zqB">
                                         <items>
                                             <menuItem title="ISBN" id="dpB-1w-cHJ">
@@ -1008,6 +1008,7 @@
                     </view>
                     <connections>
                         <outlet property="searchField" destination="pzl-5r-LZV" id="dqF-rl-lz3"/>
+                        <outlet property="tableView" destination="75l-zX-9WD" id="ImJ-6P-y3V"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1081,9 +1082,6 @@
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <action selector="ISBNTextField:" target="itz-BJ-DU2" id="lM8-Ev-ShJ"/>
-                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqK-af-qcV">
                                 <rect key="frame" x="179" y="275" width="242" height="21"/>
@@ -1093,9 +1091,6 @@
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <action selector="titleTextField:" target="itz-BJ-DU2" id="eeC-A9-447"/>
-                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oZN-Jp-Sy4">
                                 <rect key="frame" x="179" y="229" width="242" height="21"/>
@@ -1105,9 +1100,6 @@
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <action selector="authorTextField:" target="itz-BJ-DU2" id="XKh-0Z-G7U"/>
-                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49f-g8-BaB">
                                 <rect key="frame" x="179" y="183" width="96" height="21"/>
@@ -1117,9 +1109,6 @@
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <action selector="quantityTextField:" target="itz-BJ-DU2" id="YnU-SD-wna"/>
-                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IY5-da-QTs">
                                 <rect key="frame" x="179" y="133" width="96" height="21"/>
@@ -1129,9 +1118,6 @@
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <action selector="priceTextField:" target="itz-BJ-DU2" id="LQB-Df-bEs"/>
-                                </connections>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNA-TU-ft4">
                                 <rect key="frame" x="166" y="32" width="82" height="32"/>
