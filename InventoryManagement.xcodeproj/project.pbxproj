@@ -57,9 +57,9 @@
 			children = (
 				DD04463723E0A2D900F0EDB5 /* AppDelegate.swift */,
 				DD04463923E0A2D900F0EDB5 /* ViewController.swift */,
+				DD04464723E0BF6800F0EDB5 /* AddBookViewController.swift */,
 				DD04463B23E0A2DA00F0EDB5 /* Assets.xcassets */,
 				DD04463D23E0A2DA00F0EDB5 /* Main.storyboard */,
-				DD04464723E0BF6800F0EDB5 /* AddBookViewController.swift */,
 				DD04464023E0A2DA00F0EDB5 /* Info.plist */,
 				DD04464123E0A2DA00F0EDB5 /* InventoryManagement.entitlements */,
 			);
