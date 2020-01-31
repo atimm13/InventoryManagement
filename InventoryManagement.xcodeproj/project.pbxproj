@@ -12,6 +12,7 @@
 		DD04463C23E0A2DA00F0EDB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD04463B23E0A2DA00F0EDB5 /* Assets.xcassets */; };
 		DD04463F23E0A2DA00F0EDB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD04463D23E0A2DA00F0EDB5 /* Main.storyboard */; };
 		DD04464823E0BF6800F0EDB5 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD04464723E0BF6800F0EDB5 /* AddBookViewController.swift */; };
+		DD04468E23E3D7BC00F0EDB5 /* BooksFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = DD04468D23E3D7BC00F0EDB5 /* BooksFile.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		DD04464023E0A2DA00F0EDB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD04464123E0A2DA00F0EDB5 /* InventoryManagement.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InventoryManagement.entitlements; sourceTree = "<group>"; };
 		DD04464723E0BF6800F0EDB5 /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
+		DD04468D23E3D7BC00F0EDB5 /* BooksFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BooksFile.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				DD04463923E0A2D900F0EDB5 /* ViewController.swift */,
 				DD04464723E0BF6800F0EDB5 /* AddBookViewController.swift */,
 				DD04463B23E0A2DA00F0EDB5 /* Assets.xcassets */,
+				DD04468D23E3D7BC00F0EDB5 /* BooksFile.txt */,
 				DD04463D23E0A2DA00F0EDB5 /* Main.storyboard */,
 				DD04464023E0A2DA00F0EDB5 /* Info.plist */,
 				DD04464123E0A2DA00F0EDB5 /* InventoryManagement.entitlements */,
@@ -124,6 +127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD04468E23E3D7BC00F0EDB5 /* BooksFile.txt in Resources */,
 				DD04463C23E0A2DA00F0EDB5 /* Assets.xcassets in Resources */,
 				DD04463F23E0A2DA00F0EDB5 /* Main.storyboard in Resources */,
 			);

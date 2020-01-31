@@ -18,24 +18,59 @@ class ViewController: NSViewController {
     let filePath: String = "\(NSHomeDirectory())/tmp/book.txt"
     let bookTableView: NSTableView = NSTableView()
     var bookList = [Book]()
+    let textToWrite: String = "This is a new book"
     
     @IBOutlet weak var tableView: NSTableView!
     
-    @objc dynamic var books: [Book] = [Book(isbn: "456", title: "This Book", author: "Adria Timm", qty: "7", price: "4.99"), Book(isbn: "345", title: "This Book Two", author: "Adria Timm", qty: "2", price: "5.99"), Book(isbn: "234", title: "This Book Three", author: "Adria Timm", qty: "6", price: "4.99"), Book(isbn: "567", title: "This Book Four", author: "Adria Timm", qty: "9", price: "3.99")]
+    
+    @objc dynamic var books: [Book] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("view loaded")
         
-        sort()
-        //print(books[0].isbn)
+        do {
+            let path: String = "/Users/fq5170kj/Desktop/xcodeApps/InventoryManagement/InventoryManagement/BooksFile.txt"
+            let file = try String(contentsOfFile: path)
+            let text: [String] = file.components(separatedBy: "\n")
+            
+            
+            for line in text {
+                
+                if line != "" {
+                    //print(line)
+                   
+                    let sections: [String] = line.components(separatedBy: "%")
+                    
+                    let newIsbn: String = sections[0]
+                    let newTitle: String = sections[1]
+                    let newAuthor: String = sections[2]
+                    let newQty: String = sections[3]
+                    let newPrice: String = sections[4]
+    
+                    books.append(Book(isbn: newIsbn, title: newTitle, author: newAuthor, qty: newQty, price: newPrice))
 
-        // Do any additional setup after loading the view.
+                }
+                
+            }
+           
+            
+        } catch let error {
+            print("Fatal Error: \(error.localizedDescription)")
+        }
+        
+        
+        
+    }
+    
+    override func viewDidAppear() {
+        print("view did apear")
     }
    
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
-            tableView.reloadData()
+           // tableView.reloadData()
         }
     }
 
@@ -44,10 +79,8 @@ class ViewController: NSViewController {
     @IBAction func searchButton(_ sender: Any) {
         searchContents = searchField.stringValue
         print("\(searchContents)")
-        
-        books.append(Book(isbn: "888", title: "Book ", author: "Adria Timm", qty: "9", price: "9.99"))
-        tableView.reloadData()
-        
+        books.append(Book(isbn: "this", title: "is", author: "the", qty: "new", price: "book"))
+        //tableView.reloadData()
         
     }
     
@@ -56,6 +89,7 @@ class ViewController: NSViewController {
     }
     
     @IBAction func removeButton(_ sender: Any) {
+        
     }
     
     
@@ -82,64 +116,72 @@ class ViewController: NSViewController {
         print("sort function called")
     }
     
-    func saveToFile() {
+    @IBAction func reloadTableButton(_ sender: Any) {
         
-        print("save to file function called")
-            do {
-                
-                 let data = try NSKeyedArchiver.archivedData(withRootObject: bookList, requiringSecureCoding: false)
-                if FileManager.default.createFile(atPath: filePath,
-                                          contents: data,
-                                          attributes: nil) {
-                    print("File \(filePath) successfully created")
-                }
-                else {
-                    print("File \(filePath) could not be created")
-                }
-                restoreFromFile()
-               tableView.reloadData()
-            }
-            catch {
-                print("Error archiving data: \(error)")
-            }
-        }
+        tableView.reloadData()
         
-         func restoreFromFile() {
-             do {
-                 if let data = FileManager.default.contents(atPath: filePath) {
-                     print("Retrieving data from file (filePath)")
-                     bookList = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [Book] ?? [Book]()
-                    tableView.reloadData()
-                 }
-                 else {
-                     print("No data available in file (filePath)")
-                     bookList = [Book]()
-                 }
-             }
-             catch {
-                 print("Error unarchiving data: (error)")
-             }
-             //tableView.reloadData()
-         }
-        
-         func deleteFile() {
-            do {
-                try FileManager.default.removeItem(atPath: filePath)
-            }
-            catch {
-                print("Error deleting file: \(error)")
-            }
-        }
-     @objc func clearBook() {
-            //bookList.removeAll(where: <#T##(Book) throws -> Bool#>)()
-        
-            deleteFile()
-            
-          bookTableView.reloadData()
-        }
-        
-              
     }
+    
+    
+    
+    func addBook(i: String, t: String, a: String, q: String, p: String){
+        //books.append(Book(isbn: i, title: t, author: a, qty: q, price: p))
+        
+        let monkeyLine = "\(i)%\(t)%\(a)%\(q)%\(p)\n"
+
+        if let fileUpdater = try? FileHandle(forWritingAtPath: "/Users/fq5170kj/Desktop/xcodeApps/InventoryManagement/InventoryManagement/BooksFile.txt") {
+            
+             // function which when called will cause all updates to start from end of the file
+             fileUpdater.seekToEndOfFile()
+
+            // which lets the caller move editing to any position within the file by supplying an offset
+           fileUpdater.write(monkeyLine.data(using: .utf8)!)
+
+            //Once we convert our new content to data and write it, we close the file and that’s it!
+           fileUpdater.closeFile()
+        }
+        
+        
+        //currently writes the input on last line, but does not update the table..
+        writeFileToTable()
+        
+      
+    }
+    
+    func writeFileToTable(){
+        do {
+                let path: String = "/Users/fq5170kj/Desktop/xcodeApps/InventoryManagement/InventoryManagement/BooksFile.txt"
+                let file = try String(contentsOfFile: path)
+                let text: [String] = file.components(separatedBy: "\n")
+                
+                
+                for line in text {
+                    
+                    if line != "" {
+                        //print(line)
+                       
+                        let sections: [String] = line.components(separatedBy: "%")
+                        
+                        let newIsbn: String = sections[0]
+                        let newTitle: String = sections[1]
+                        let newAuthor: String = sections[2]
+                        let newQty: String = sections[3]
+                        let newPrice: String = sections[4]
+        
+                        books.append(Book(isbn: newIsbn, title: newTitle, author: newAuthor, qty: newQty, price: newPrice))
+
+                    }
+                    
+                }
+               
+                
+            } catch let error {
+                print("Fatal Error: \(error.localizedDescription)")
+            }
+        //tableView.reloadData()
+    }
+    
+}
             
 
 
@@ -150,13 +192,7 @@ class Book: NSObject{
     @objc dynamic var author: String
     @objc dynamic var qty: String
     @objc dynamic var price: String
-    //let filePath: String = "\(NSHomeDirectory())/tmp/book.txt"
-    
-    let ISBNKEY: String = "ISBN"
-    let TITLEKEY: String = "Title"
-    let AUTHORKEY: String = "Author"
-    let QTYKEY: String = "Quantity"
-    let PRICEKEY: String = "Price"
+
 
     init(isbn: String, title: String, author: String, qty: String, price: String){
         self.isbn = isbn
@@ -165,22 +201,6 @@ class Book: NSObject{
         self.qty = qty
         self.price = price
 
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        isbn = (aDecoder.decodeObject(forKey: ISBNKEY) as? String)!
-        title = (aDecoder.decodeObject(forKey: TITLEKEY) as? String)!
-        author = (aDecoder.decodeObject(forKey: AUTHORKEY) as? String)!
-        qty = (aDecoder.decodeObject(forKey: QTYKEY) as? String)!
-        price = (aDecoder.decodeObject(forKey: PRICEKEY) as? String)!
-    }
-    
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(isbn, forKey: ISBNKEY)
-        aCoder.encode(title, forKey: TITLEKEY)
-        aCoder.encode(author, forKey: AUTHORKEY)
-        aCoder.encode(qty, forKey: QTYKEY)
-        aCoder.encode(price, forKey: PRICEKEY)
     }
     
 }

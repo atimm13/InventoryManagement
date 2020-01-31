@@ -1,0 +1,41 @@
+2554%Anne of Green Gables%Lucy Maud Montgomery%18%$23.00
+3047%Ben-Hur: A Tale of the Christ%Lew Wallace%9%$5.00
+1587%Black Beauty%Anna Sewell%3%$24.00
+8612%Charlotte's Web%E.B. White%16%$3.00
+3040%Harry Potter and the Chamber of Secrets%J. K. Rowling%16%$14.00
+4464%Harry Potter and the Deathly Hallows%J. K. Rowling%16%$7.00
+6192%Flowers in the Attic%V. C. Andrews%6%$23.00
+3549%To Kill a Mockingbird%Harper Lee%8%$17.00
+8321%Angels & Demons%Dan Brown%13%$6.00
+7398%Kane and Abel%Jeffrey Archer%2%$21.00
+6692%Heidi%Johanna Spyri%19%$5.00
+6929%Lolita%Vladimir Nabokov%2%$19.00
+8961%One Hundred Years of Solitude%Gabriel García Márquez%4%$29.00
+9185%She: A History of Adventure%H. Rider Haggard%8%$17.00
+4171%The Adventures of Pinocchio%Carlo Collodi%9%$22.00
+2733%The Alchemist (O Alquimista)%Paulo Coelho%12%$23.00
+4547%The Bridges of Madison County%Robert James Waller%8%$25.00
+7703%The Catcher in the Rye%J. D. Salinger%19%$2.00
+6005%The Common Sense Book of Baby and Child Care%Dr. Benjamin Spock%17%$13.00
+5704%The Da Vinci Code%Dan Brown%12%$8.00
+1077%The Eagle Has Landed%Jack Higgins%9%$29.00
+2039%The Ginger Man%J. P. Donleavy%9%$27.00
+2633%The Hite Report%Shere Hite%11%$12.00
+4792%The Lion, the Witch and the Wardrobe%C. S. Lewis%1%$11.00
+1544%The Name of the Rose (Il Nome della Rosa)%Umberto Eco%16%$20.00
+7239%Vardi Wala Gunda%Ved Prakash Sharma%19%$3.00
+4658%Watership Down%Richard Adams%9%$6.00
+9149%You Can Heal Your Life%Louise Hay%18%$2.00
+8388%The Great Gatsby%F. Scott Fitzgerald%4%$18.00
+8682%The Kite Runner%Khaled Hosseini%2%$14.00
+6294%Valley of the Dolls%Jacqueline Susann%6%$23.00
+1261%The Lost Symbol%Dan Brown%7%$26.00
+9251%Gone with the Wind%Margaret Mitchell%2%$2.00
+8075%Goosebumps%R. L. Stine%16%$9.00
+9852%Perry Mason%Erle Stanley Gardner%1%$2.00
+7516%Berenstain Bears%Stan and Jan Berenstain%3%$16.00
+3687%The Magic School Bus%Joanna Cole%20%$29.00
+2174%Sweet Valley High%Francine Pascal%18%$23.00
+6458%Noddy%Enid Blyton%10%$25.00
+2209%Winnie-the-Pooh%A. A. Milne%5%$25.00
+husia%fd lsa%fd kmsa%3%10,22
