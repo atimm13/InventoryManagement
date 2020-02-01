@@ -118,37 +118,6 @@ class ViewController: NSViewController {
     
     @IBAction func reloadTableButton(_ sender: Any) {
         
-        tableView.reloadData()
-        
-    }
-    
-    
-    
-    func addBook(i: String, t: String, a: String, q: String, p: String){
-        //books.append(Book(isbn: i, title: t, author: a, qty: q, price: p))
-        
-        let monkeyLine = "\(i)%\(t)%\(a)%\(q)%\(p)\n"
-
-        if let fileUpdater = try? FileHandle(forWritingAtPath: "/Users/fq5170kj/Desktop/xcodeApps/InventoryManagement/InventoryManagement/BooksFile.txt") {
-            
-             // function which when called will cause all updates to start from end of the file
-             fileUpdater.seekToEndOfFile()
-
-            // which lets the caller move editing to any position within the file by supplying an offset
-           fileUpdater.write(monkeyLine.data(using: .utf8)!)
-
-            //Once we convert our new content to data and write it, we close the file and that’s it!
-           fileUpdater.closeFile()
-        }
-        
-        
-        //currently writes the input on last line, but does not update the table..
-        writeFileToTable()
-        
-      
-    }
-    
-    func writeFileToTable(){
         do {
                 let path: String = "/Users/fq5170kj/Desktop/xcodeApps/InventoryManagement/InventoryManagement/BooksFile.txt"
                 let file = try String(contentsOfFile: path)
@@ -178,8 +147,35 @@ class ViewController: NSViewController {
             } catch let error {
                 print("Fatal Error: \(error.localizedDescription)")
             }
-        //tableView.reloadData()
+        
     }
+    
+    
+    
+    func addBook(i: String, t: String, a: String, q: String, p: String){
+        //books.append(Book(isbn: i, title: t, author: a, qty: q, price: p))
+        
+        let monkeyLine = "\(i)%\(t)%\(a)%\(q)%\(p)\n"
+
+        if let fileUpdater = try? FileHandle(forWritingAtPath: "/Users/fq5170kj/Desktop/xcodeApps/InventoryManagement/InventoryManagement/BooksFile.txt") {
+            
+             // function which when called will cause all updates to start from end of the file
+             fileUpdater.seekToEndOfFile()
+
+            // which lets the caller move editing to any position within the file by supplying an offset
+           fileUpdater.write(monkeyLine.data(using: .utf8)!)
+
+            //Once we convert our new content to data and write it, we close the file and that’s it!
+           fileUpdater.closeFile()
+        }
+        
+        
+        //currently writes the input on last line, but does not update the table..
+        //writeFileToTable()
+        
+      
+    }
+    
     
 }
             
