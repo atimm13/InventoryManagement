@@ -19,9 +19,16 @@ class ViewController: NSViewController {
     let bookTableView: NSTableView = NSTableView()
     var bookList = [Book]()
     let textToWrite: String = "This is a new book"
+    var rowSelected = Int()
     
     @IBOutlet weak var tableView: NSTableView!
     
+    @IBAction func tableView(_ sender: Any) {
+        rowSelected = tableView.selectedRow
+        
+    }
+    
+  
     
     @objc dynamic var books: [Book] = []
 
@@ -89,9 +96,15 @@ class ViewController: NSViewController {
     }
     
     @IBAction func removeButton(_ sender: Any) {
-        
-    }
+        //print(rowSelected)
+        //let indexPath = IndexPath(item: 0, section: 0)
+        //tableView.removeRows(at: [indexPath], withAnimation: .effectFade)
+        tableView.removeRows(at: [rowSelected], withAnimation: .effectFade)
     
+        
+        
+       
+    }
     
     @IBAction func sortByISBN(_ sender: Any) {
         sortBy = "ISBN"
@@ -117,7 +130,7 @@ class ViewController: NSViewController {
     }
     
     @IBAction func reloadTableButton(_ sender: Any) {
-        
+        books = []
         do {
                 let path: String = "/Users/fq5170kj/Desktop/xcodeApps/InventoryManagement/InventoryManagement/BooksFile.txt"
                 let file = try String(contentsOfFile: path)

@@ -49,8 +49,6 @@ class AddBookViewController: NSViewController {
         Price = priceTextField.stringValue
         print("\(Price)")
         
-        //vc.bookList.append(Book(isbn: ISBN, title: Title, author: Author, qty: Quantity, price: Price))
- 
         vc.addBook(i: ISBN, t: Title, a: Author, q: Quantity, p: Price)
         self.dismiss(self)
 

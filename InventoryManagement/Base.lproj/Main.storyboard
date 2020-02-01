@@ -907,7 +907,7 @@
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
-                                                <action selector="tableView:" target="XfG-lQ-9wD" id="aeg-s4-aWk"/>
+                                                <action selector="tableView:" target="XfG-lQ-9wD" id="qRL-vo-MUH"/>
                                                 <binding destination="OfV-Pd-Y5q" name="content" keyPath="arrangedObjects" id="rEd-VL-96n"/>
                                             </connections>
                                         </tableView>
@@ -1006,7 +1006,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yg-qg-nfG">
-                                <rect key="frame" x="672" y="77" width="114" height="32"/>
+                                <rect key="frame" x="672" y="35" width="114" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Reload Data" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Sii-d3-eIr">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
