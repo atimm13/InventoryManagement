@@ -39,15 +39,15 @@ class AddBookViewController: NSViewController {
         
      
         ISBN = ISBNTextField.stringValue
-        print("\(ISBN)")
+        //print("\(ISBN)")
         Title = titleTextField.stringValue
-        print("\(Title)")
+        //print("\(Title)")
         Author = authorTextField.stringValue
-        print("\(Author)")
+        //print("\(Author)")
         Quantity = quantityTextField.stringValue
-        print("\(Quantity)")
+        //print("\(Quantity)")
         Price = priceTextField.stringValue
-        print("\(Price)")
+        //print("\(Price)")
         
         vc.addBook(i: ISBN, t: Title, a: Author, q: Quantity, p: Price)
         self.dismiss(self)

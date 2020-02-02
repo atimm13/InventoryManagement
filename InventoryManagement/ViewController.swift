@@ -99,6 +99,7 @@ class ViewController: NSViewController {
         //print(rowSelected)
         //let indexPath = IndexPath(item: 0, section: 0)
         //tableView.removeRows(at: [indexPath], withAnimation: .effectFade)
+        
         tableView.removeRows(at: [rowSelected], withAnimation: .effectFade)
     
         
@@ -167,29 +168,38 @@ class ViewController: NSViewController {
     
     func addBook(i: String, t: String, a: String, q: String, p: String){
         //books.append(Book(isbn: i, title: t, author: a, qty: q, price: p))
+        if p.contains("$"){
         
-        let monkeyLine = "\(i)%\(t)%\(a)%\(q)%\(p)\n"
+            let monkeyLine = "\(i)%\(t)%\(a)%\(q)%\(p)\n"
 
-        if let fileUpdater = try? FileHandle(forWritingAtPath: "/Users/fq5170kj/Desktop/xcodeApps/InventoryManagement/InventoryManagement/BooksFile.txt") {
+            if let fileUpdater = try? FileHandle(forWritingAtPath: "/Users/fq5170kj/Desktop/xcodeApps/InventoryManagement/InventoryManagement/BooksFile.txt") {
+
+                fileUpdater.seekToEndOfFile()
+
+                fileUpdater.write(monkeyLine.data(using: .utf8)!)
+
+                fileUpdater.closeFile()
+            }
             
-             // function which when called will cause all updates to start from end of the file
-             fileUpdater.seekToEndOfFile()
+        }else {
+            
+            let tempP: String = "$" + p
+            
+            let monkeyLine = "\(i)%\(t)%\(a)%\(q)%\(tempP)\n"
 
-            // which lets the caller move editing to any position within the file by supplying an offset
-           fileUpdater.write(monkeyLine.data(using: .utf8)!)
+            if let fileUpdater = try? FileHandle(forWritingAtPath: "/Users/fq5170kj/Desktop/xcodeApps/InventoryManagement/InventoryManagement/BooksFile.txt") {
+                
+                fileUpdater.seekToEndOfFile()
 
-            //Once we convert our new content to data and write it, we close the file and that’s it!
-           fileUpdater.closeFile()
+                fileUpdater.write(monkeyLine.data(using: .utf8)!)
+
+                fileUpdater.closeFile()
         }
-        
-        
-        //currently writes the input on last line, but does not update the table..
-        //writeFileToTable()
         
       
     }
     
-    
+    }
 }
             
 
