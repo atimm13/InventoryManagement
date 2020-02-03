@@ -29,7 +29,6 @@ class ViewController: NSViewController {
     }
     
   
-    
     @objc dynamic var books: [Book] = []
 
     override func viewDidLoad() {
@@ -70,6 +69,8 @@ class ViewController: NSViewController {
         
     }
     
+    
+    
     override func viewDidAppear() {
         print("view did apear")
     }
@@ -86,42 +87,53 @@ class ViewController: NSViewController {
     @IBAction func searchButton(_ sender: Any) {
         searchContents = searchField.stringValue
         print("\(searchContents)")
-        books.append(Book(isbn: "this", title: "is", author: "the", qty: "new", price: "book"))
-        //tableView.reloadData()
         
     }
+   
     
     @IBAction func addButton(_ sender: Any) {
       
     }
     
     @IBAction func removeButton(_ sender: Any) {
-        //print(rowSelected)
-        //let indexPath = IndexPath(item: 0, section: 0)
-        //tableView.removeRows(at: [indexPath], withAnimation: .effectFade)
         
-        tableView.removeRows(at: [rowSelected], withAnimation: .effectFade)
-    
+        let alert = NSAlert()
+        
+        alert.messageText = "Are you sure you want to delete entry?"
+        //alert.informativeText = "Are you?"
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "Yes")
+        alert.addButton(withTitle: "No")
+        
+        let answer = alert.runModal()
+        
+        if answer == NSApplication.ModalResponse.alertFirstButtonReturn {
+            tableView.removeRows(at: [rowSelected], withAnimation: .effectFade)
+        }
         
         
        
     }
     
+    
+    
     @IBAction func sortByISBN(_ sender: Any) {
         sortBy = "ISBN"
-        print("sort by \(sortBy)")
+        //print("sort by \(sortBy)")
         sort()
     }
     
     @IBAction func sortByTitle(_ sender: Any) {
         sortBy = "Title"
-        print("sort by \(sortBy)")
+        //print("sort by \(sortBy)")
         sort()
+        
+        
     }
     
     @IBAction func sortByAuthor(_ sender: Any) {
         sortBy = "Author"
-        print("sort by \(sortBy)")
+        //print("sort by \(sortBy)")
         sort()
     }
     
